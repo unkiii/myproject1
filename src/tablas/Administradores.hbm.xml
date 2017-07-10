@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-jul-2017 12:51:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="justmysite" dynamic-insert="false" dynamic-update="false" mutable="true" name="tablas.Administradores" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="administradores">
+        <composite-id class="tablas.AdministradoresId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="dni" type="string">
+                <column length="50" name="dni"/>
+            </key-property>
+            <key-property name="nombre" type="string">
+                <column length="50" name="Nombre"/>
+            </key-property>
+            <key-property name="fechaDeEntrada" type="date">
+                <column length="10" name="`Fecha de Entrada`"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="tablas.Usuarios" embed-xml="true" fetch="select" insert="false" name="usuarios" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="50" name="dni" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

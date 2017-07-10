@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-jul-2017 12:51:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="justmysite" dynamic-insert="false" dynamic-update="false" mutable="true" name="tablas.Usuarios" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="usuarios">
+        <id name="dni" type="string">
+            <column length="50" name="dni"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="pass" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pass"/>
+        </property>
+        <property generated="never" lazy="false" name="mail" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="mail"/>
+        </property>
+        <property generated="never" lazy="false" name="edad" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="edad"/>
+        </property>
+        <property generated="never" lazy="false" name="poblacion" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="poblacion"/>
+        </property>
+        <property generated="never" lazy="false" name="pais" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="pais"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="administradoreses" optimistic-lock="true" sort="unsorted" table="administradores">
+            <key on-delete="noaction">
+                <column length="50" name="dni" not-null="true"/>
+            </key>
+            <one-to-many class="tablas.Administradores" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

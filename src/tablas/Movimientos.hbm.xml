@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 07-jul-2017 12:51:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="justmysite" dynamic-insert="false" dynamic-update="false" mutable="true" name="tablas.Movimientos" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="movimientos">
+        <composite-id class="tablas.MovimientosId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="movimiento" type="string">
+                <column length="50" name="movimiento"/>
+            </key-property>
+            <key-property name="id" type="java.lang.Integer">
+                <column name="id"/>
+            </key-property>
+            <key-property name="operacion" type="string">
+                <column length="50" name="operacion"/>
+            </key-property>
+            <key-property name="fecha" type="string">
+                <column length="50" name="fecha"/>
+            </key-property>
+            <key-property name="hora" type="string">
+                <column length="50" name="hora"/>
+            </key-property>
+            <key-property name="consultaRealizada" type="string">
+                <column length="50" name="`consulta-realizada`"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
